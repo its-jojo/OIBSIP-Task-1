@@ -1,0 +1,258 @@
+/* ===== Animated Gradient Background ===== */
+.landing {
+  min-height: 100vh;
+  background: #000; /* black background */
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
+
+/* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(270deg, #0f0f0f, #1c1c1c, #2a2a2a);
+  background-size: 600% 600%;
+  animation: navbarGradient 12s ease infinite;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+@keyframes navbarGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff, #b3b3b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 14px;
+  opacity: 0.7;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.navbar nav a:hover {
+  opacity: 1;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+.btn-primary {
+  padding: 12px 30px;
+  margin-top: 20px;
+  background: #ffffff10;
+  color: #fff;
+  border: 1px solid #ffffff30;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #ffffff30;
+  box-shadow: 0 0 20px #ffffff40;
+}
+
+
+/* ===== FEATURED BANNERS ===== */
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 50px 20px;
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+}
+.feature-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+}
+
+.btn-secondary {
+  display: inline-block;      /* a tag button ban jaye */
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 30px;
+  cursor: pointer;
+  text-decoration: none;      /* underline hat gaya */
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+
+/* ===== PRODUCTS GRID ===== */
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Navbar dynamic */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  transition: background 0.4s ease;
+}
+
+
+
+.products {
+  padding: 50px 20px;
+  text-align: center;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Product Card */
+
+
+/* Product Card (now <a>) */
+.product-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+  border-radius: 20px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* anchor fixes */
+  color: #fff;                 /* text white */
+  text-decoration: none;       /* no underline */
+  display: block;              /* make it a block card */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+}
+
+/* Glow effect */
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+}
+.product-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Headings & Text inside */
+.product-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.product-card p {
+  opacity: 0.8;
+  color: #fff;
+}
+
+/* Image */
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: #111;
+  border-radius: 12px;
+}
